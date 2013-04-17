@@ -1,3 +1,5 @@
+git.test
+
 2012-05-22  Oliver Hader <oliver.hader@typo3.org>
 	* Raised version to 3.3.0
 	* Added compatibility layer for removed methods in TYPO3 6.0
