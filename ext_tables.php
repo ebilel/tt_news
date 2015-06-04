@@ -258,7 +258,8 @@ if (TYPO3_MODE == 'BE')	{
 // 	if (tx_ttnews_compatibility::getInstance()->int_from_ver(TYPO3_version) < 4004000) {
 // 		$ICON_TYPES['news'] = array('icon' => t3lib_extMgm::extRelPath($_EXTKEY) . 'res/gfx/ext_icon_ttnews_folder.gif');
 // 	} else {
-		t3lib_SpriteManager::addTcaTypeIcon('pages', 'contains-news', t3lib_extMgm::extRelPath($_EXTKEY) . 'res/gfx/ext_icon_ttnews_folder.gif');
+		$TCA['pages']['columns']['module']['config']['items'][] = array('News', 'news', t3lib_extMgm::extRelPath($_EXTKEY).'res/gfx/ext_icon_ttnews_folder.gif');
+        	\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-news', t3lib_extMgm::extRelPath($_EXTKEY) . 'res/gfx/ext_icon_ttnews_folder.gif');
 // 	}
 
 	if (TYPO3_UseCachingFramework || tx_ttnews_compatibility::getInstance()->int_from_ver(TYPO3_version) >= 6000000) {
